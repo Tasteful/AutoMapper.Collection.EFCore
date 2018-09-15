@@ -11,6 +11,14 @@ AutoMapper.Collection.EFCore
         // Configuration code
     });
 
+If the project is using the `AutoMapper.Extensions.Microsoft.DependencyInjection` package the configuration will instead be.
+
+    services.AddAutoMapper((serviceProvider, automapper) =>
+    {
+        automapper.AddCollectionMappers();
+        automapper.AddEntityFrameworkCoreKeys<DB>(serviceProvider);
+    });
+
 User defined equality expressions will overwrite primary key expressions.
 
 What about comparing to a single existing Entity for updating?
