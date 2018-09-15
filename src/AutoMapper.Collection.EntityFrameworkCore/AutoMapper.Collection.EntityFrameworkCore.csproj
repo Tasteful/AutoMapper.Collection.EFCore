@@ -9,16 +9,17 @@
     <PackageIconUrl>https://s3.amazonaws.com/automapper/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/AutoMapper/Automapper.Collection.EFCore</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/AutoMapper/AutoMapper.Collection.EFCore/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/AutoMapper/AutoMapper.Collection.EFCore.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <AssemblyOriginatorKeyFile>../Key.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Collection" Version="4.1.0-*" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="AutoMapper.Collection" Version="4.1.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-63127-02" PrivateAssets="All"/>
     <PackageReference Include="AutoMapper.Extensions.ExpressionMapping" Version="1.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
   </ItemGroup>
@@ -26,6 +27,13 @@
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Readme.md">
+      <Pack>true</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
